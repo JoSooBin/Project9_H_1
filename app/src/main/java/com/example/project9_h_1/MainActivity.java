@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected (MenuItem item) {
+    public boolean onOptionsItemSelected (MenuItem item) { //메뉴생성
         switch (item.getItemId()) {
             case 1:
                 curShape = LINE; // 4
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             super(context);
         }
             @Override
-            public boolean onTouchEvent(MotionEvent event) {
+            public boolean onTouchEvent(MotionEvent event) { //마우스로 시작점, 끝 점 잡기
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         startX = (int) event.getX();
@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
             paint.setStyle(Paint.Style. STROKE);
             paint.setColor(color);
 
+            //도형 조건 지정
             switch (curShape) {
                 case LINE:
                 canvas.drawLine(startX, startY, stopX, stopY, paint);
